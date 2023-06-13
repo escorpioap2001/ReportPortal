@@ -1,0 +1,36 @@
+==============================================================================
+addProductTest                                                                
+==============================================================================
+1.0 Add 2 Blue and green Sneaker To Shopping Cart :: Add Blue and ... | PASS |
+------------------------------------------------------------------------------
+2.0 Add Casual Golf Belt To Shopping Cart :: Add Blue Jean from Ap...   
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\palbertp\PycharmProjects\pythonProject\test\ui\addProductTest.robot:22
+    T:  2.0 Add Casual Golf Belt To Shopping Cart    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\palbertp\PycharmProjects\pythonProject\test\ui\addProductTest.robot:7
+      Setup Environment    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Users\palbertp\PycharmProjects\pythonProject\environment\variables.robot:12
+      Set Global Variable    ${browser}    ${browser}
+      |  ${browser} = Chrome (str)
+      |  ${browser} = Chrome (str)
+______________________________________________________________________________
+| FAIL |
+Setup failed:
+Execution terminated by signal
+------------------------------------------------------------------------------
+3.0 Add Fiction To Shopping Cart :: Add Fiction from Books to Shop... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+4.0 Add Denim Short with Rhinestones To Shopping Cart :: Add Denim... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+5.0 Add 2 Smartphones To Shopping Cart :: Add Fiction from Books t... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+addProductTest                                                        | FAIL |
+5 tests, 1 passed, 4 failed
+==============================================================================
+Output:  C:\Users\palbertp\PycharmProjects\pythonProject\results\pabot_results\0\output.xml

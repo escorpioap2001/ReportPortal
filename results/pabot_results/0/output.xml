@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230608 12:36:08.302" rpa="false" schemaversion="3">
+<suite id="s1" name="addProductTest" source="C:\Users\palbertp\PycharmProjects\pythonProject\test\ui\addProductTest.robot">
+<test id="s1-t1" name="1.0 Add 2 Blue and green Sneaker To Shopping Cart" line="12">
+<kw name="Setup Environment" library="variables" type="SETUP">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${browser}</arg>
+<arg>${browser}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230608 12:36:08.560" level="INFO">${browser} = Chrome</msg>
+<status status="PASS" starttime="20230608 12:36:08.560" endtime="20230608 12:36:08.560"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${urlTricentisDemoWebShop}</arg>
+<arg>https://demowebshop.tricentis.com/</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230608 12:36:08.560" level="INFO">${urlTricentisDemoWebShop} = https://demowebshop.tricentis.com/</msg>
+<status status="PASS" starttime="20230608 12:36:08.560" endtime="20230608 12:36:08.560"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${username}</arg>
+<arg>johndoe@dummyweb.com</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230608 12:36:08.563" level="INFO">${username} = johndoe@dummyweb.com</msg>
+<status status="PASS" starttime="20230608 12:36:08.560" endtime="20230608 12:36:08.563"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${password}</arg>
+<arg>Tosca1234!</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230608 12:36:08.564" level="INFO">${password} = Tosca1234!</msg>
+<status status="PASS" starttime="20230608 12:36:08.563" endtime="20230608 12:36:08.564"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:08.560" endtime="20230608 12:36:08.564"/>
+</kw>
+<kw name="Given Open Browser To Login Page" library="homePage">
+<kw name="Given Open Browser and Confirm with Logo" library="headerHomePage">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${urlTricentisDemoWebShop}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230608 12:36:08.564" level="INFO">Opening browser 'Chrome' to base url 'https://demowebshop.tricentis.com/'.</msg>
+<status status="PASS" starttime="20230608 12:36:08.564" endtime="20230608 12:36:11.381"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230608 12:36:11.381" endtime="20230608 12:36:11.511"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${headerLogo}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230608 12:36:11.511" endtime="20230608 12:36:11.528"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:08.564" endtime="20230608 12:36:11.529"/>
+</kw>
+<kw name="Then Click in the Link of Login" library="headerHomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${loginLink}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230608 12:36:11.530" level="INFO">Clicking link 'class:ico-login'.</msg>
+<status status="PASS" starttime="20230608 12:36:11.529" endtime="20230608 12:36:11.898"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:11.529" endtime="20230608 12:36:11.899"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:08.564" endtime="20230608 12:36:11.900"/>
+</kw>
+<kw name="Given Login with ${username} and ${password}" library="loginPage" sourcename="Login with ${username} and ${password}">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${loginInput}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230608 12:36:11.901" level="INFO">Typing text 'johndoe@dummyweb.com' into text field 'id:Email'.</msg>
+<status status="PASS" starttime="20230608 12:36:11.900" endtime="20230608 12:36:11.995"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${passwordInput}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230608 12:36:11.996" level="INFO">Typing text 'Tosca1234!' into text field 'id:Password'.</msg>
+<status status="PASS" starttime="20230608 12:36:11.995" endtime="20230608 12:36:12.091"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${loginButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230608 12:36:12.092" level="INFO">Clicking button 'xpath:.//input[@value="Log in"]'.</msg>
+<status status="PASS" starttime="20230608 12:36:12.091" endtime="20230608 12:36:12.538"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:11.900" endtime="20230608 12:36:12.539"/>
+</kw>
+<kw name="And Welcome Page Is Displayed" library="loginPage">
+<kw name="Catenate" library="BuiltIn">
+<var>${checkUserLogin}</var>
+<arg>SEPARATOR=</arg>
+<arg>${checkUserLogin}${username}']</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20230608 12:36:12.542" level="INFO">${checkUserLogin} = xpath:.//a[text()='johndoe@dummyweb.com']</msg>
+<status status="PASS" starttime="20230608 12:36:12.541" endtime="20230608 12:36:12.543"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${checkUserLogin}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230608 12:36:12.543" endtime="20230608 12:36:12.620"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${logoutLink}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230608 12:36:12.621" endtime="20230608 12:36:12.649"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:12.540" endtime="20230608 12:36:12.650"/>
+</kw>
+<kw name="When Navigate To Apparel &amp; Shoes Page" library="homePage" sourcename="Navigate To ${category} Page">
+<if>
+<branch type="IF" condition="&quot;${category}&quot; == &quot;Books&quot;">
+<kw name="Click Link of Books" library="subheaderHomePage">
+<status status="NOT RUN" starttime="20230608 12:36:12.651" endtime="20230608 12:36:12.651"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:12.651" endtime="20230608 12:36:12.652"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Computers&quot;">
+<kw name="Click Link of Computers" library="subheaderHomePage">
+<status status="NOT RUN" starttime="20230608 12:36:12.653" endtime="20230608 12:36:12.653"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:12.652" endtime="20230608 12:36:12.653"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Desktops&quot;">
+<kw name="Click Link of Desktops" library="subheaderHomePage">
+<status status="NOT RUN" starttime="20230608 12:36:12.653" endtime="20230608 12:36:12.653"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:12.653" endtime="20230608 12:36:12.653"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Notebooks&quot;">
+<kw name="Click Link of Notebooks" library="subheaderHomePage">
+<status status="NOT RUN" starttime="20230608 12:36:12.654" endtime="20230608 12:36:12.654"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:12.654" endtime="20230608 12:36:12.654"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Accessories&quot;">
+<kw name="Click Link of Accessories" library="subheaderHomePage">
+<status status="NOT RUN" starttime="20230608 12:36:12.654" endtime="20230608 12:36:12.654"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:12.654" endtime="20230608 12:36:12.654"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Electronics&quot;">
+<kw name="Click Link of Electronics" library="subheaderHomePage">
+<status status="NOT RUN" starttime="20230608 12:36:12.655" endtime="20230608 12:36:12.655"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:12.655" endtime="20230608 12:36:12.655"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Camera, photo&quot;">
+<kw name="Click Link of Camera, photo" library="subheaderHomePage">
+<status status="NOT RUN" starttime="20230608 12:36:12.655" endtime="20230608 12:36:12.656"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:12.655" endtime="20230608 12:36:12.656"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Cell phones&quot;">
+<kw name="Click Link of Cell phones" library="subheaderHomePage">
+<status status="NOT RUN" starttime="20230608 12:36:12.656" endtime="20230608 12:36:12.656"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:12.656" endtime="20230608 12:36:12.656"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Apparel &amp; Shoes&quot;">
+<kw name="Click Link of Apparel &amp; Shoes" library="subheaderHomePage">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${apparel&amp;shoesLink}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230608 12:36:12.658" level="INFO">Clicking link 'xpath:.//div[@class="header-menu"]/ul[@class="top-menu"]/li/a[@href="/apparel-shoes"]'.</msg>
+<status status="PASS" starttime="20230608 12:36:12.657" endtime="20230608 12:36:13.126"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:12.656" endtime="20230608 12:36:13.126"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:12.656" endtime="20230608 12:36:13.126"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Digital downloads&quot;">
+<kw name="Click Link of Digital downloads" library="subheaderHomePage">
+<status status="NOT RUN" starttime="20230608 12:36:13.127" endtime="20230608 12:36:13.127"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:13.127" endtime="20230608 12:36:13.127"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Jewelry&quot;">
+<kw name="Click Link of Jewelry" library="subheaderHomePage">
+<status status="NOT RUN" starttime="20230608 12:36:13.128" endtime="20230608 12:36:13.128"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:13.127" endtime="20230608 12:36:13.128"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${category}&quot; == &quot;Gift Cards&quot;">
+<kw name="Click Link of Gift Cards" library="subheaderHomePage">
+<status status="NOT RUN" starttime="20230608 12:36:13.128" endtime="20230608 12:36:13.128"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:13.128" endtime="20230608 12:36:13.128"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" library="BuiltIn">
+<arg>"No es un producto existente"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230608 12:36:13.128" endtime="20230608 12:36:13.130"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 12:36:13.128" endtime="20230608 12:36:13.130"/>
+</branch>
+<status status="PASS" starttime="20230608 12:36:12.650" endtime="20230608 12:36:13.130"/>
+</if>
+<kw name="Catenate" library="BuiltIn">
+<var>${checkproductPage}</var>
+<arg>SEPARATOR=</arg>
+<arg>xpath:.//h1[text()='${category}']</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20230608 12:36:13.130" level="INFO">${checkproductPage} = xpath:.//h1[text()='Apparel &amp; Shoes']</msg>
+<status status="PASS" starttime="20230608 12:36:13.130" endtime="20230608 12:36:13.130"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${checkproductPage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230608 12:36:13.130" endtime="20230608 12:36:13.156"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:12.650" endtime="20230608 12:36:13.156"/>
+</kw>
+<kw name="And Select 2 Blue and green Sneaker And Add it To Shopping Cart" library="productPage" sourcename="Select ${quantity} ${product} And Add it To Shopping Cart">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${productsList}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230608 12:36:13.169" level="INFO">Current page contains element 'xpath:.//h2[@class="product-title"]/a'.</msg>
+<status status="PASS" starttime="20230608 12:36:13.157" endtime="20230608 12:36:13.169"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${count}</var>
+<arg>${productsList}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230608 12:36:13.180" level="INFO">${count} = 8</msg>
+<status status="PASS" starttime="20230608 12:36:13.169" endtime="20230608 12:36:13.180"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230608 12:36:13.180" endtime="20230608 12:36:13.180"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${productLink}</var>
+<arg>SEPARATOR=</arg>
+<arg>xpath://h2[@class='product-title']/a[text()='${product}']</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20230608 12:36:13.180" level="INFO">${productLink} = xpath://h2[@class='product-title']/a[text()='Blue and green Sneaker']</msg>
+<status status="PASS" starttime="20230608 12:36:13.180" endtime="20230608 12:36:13.180"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${productLink}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230608 12:36:13.181" level="INFO">Clicking element 'xpath://h2[@class='product-title']/a[text()='Blue and green Sneaker']'.</msg>
+<status status="PASS" starttime="20230608 12:36:13.180" endtime="20230608 12:36:14.251"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${productDetailsCell}</var>
+<arg>SEPARATOR=</arg>
+<arg>xpath:.//h1[contains(text(),'${product}')]</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20230608 12:36:14.252" level="INFO">${productDetailsCell} = xpath:.//h1[contains(text(),'Blue and green Sneaker')]</msg>
+<status status="PASS" starttime="20230608 12:36:14.251" endtime="20230608 12:36:14.252"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${productDetailsCell}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230608 12:36:14.252" endtime="20230608 12:36:14.278"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${quantityBeforeText}</var>
+<arg>${shoppingCartQuantity}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230608 12:36:14.306" level="INFO">${quantityBeforeText} = (34)</msg>
+<status status="PASS" starttime="20230608 12:36:14.278" endtime="20230608 12:36:14.306"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${quantityBeforeText}</var>
+<arg>${quantityBeforeText}</arg>
+<arg>(</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20230608 12:36:14.306" level="INFO">${quantityBeforeText} = 34)</msg>
+<status status="PASS" starttime="20230608 12:36:14.306" endtime="20230608 12:36:14.307"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${quantityBeforeText}</var>
+<arg>${quantityBeforeText}</arg>
+<arg>)</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20230608 12:36:14.307" level="INFO">${quantityBeforeText} = 34</msg>
+<status status="PASS" starttime="20230608 12:36:14.307" endtime="20230608 12:36:14.307"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${quantityBefore}</var>
+<arg>${quantityBeforeText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20230608 12:36:14.308" level="INFO">${quantityBefore} = 34</msg>
+<status status="PASS" starttime="20230608 12:36:14.307" endtime="20230608 12:36:14.308"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${quantity}</var>
+<arg>${quantity}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20230608 12:36:14.308" level="INFO">${quantity} = 2</msg>
+<status status="PASS" starttime="20230608 12:36:14.308" endtime="20230608 12:36:14.308"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${expectedQuantityAfter}</var>
+<arg>${quantityBefore} + ${quantity}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230608 12:36:14.309" level="INFO">${expectedQuantityAfter} = 36</msg>
+<status status="PASS" starttime="20230608 12:36:14.308" endtime="20230608 12:36:14.309"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${passed}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${addToCartButton}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${addToCartButton}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230608 12:36:14.335" level="INFO">Element 'xpath:.//input[@class="button-1 add-to-cart-button"]' is displayed.</msg>
+<status status="PASS" starttime="20230608 12:36:14.309" endtime="20230608 12:36:14.336"/>
+</kw>
+<msg timestamp="20230608 12:36:14.336" level="INFO">${passed} = True</msg>
+<status status="PASS" starttime="20230608 12:36:14.309" endtime="20230608 12:36:14.336"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${passed}</arg>
+<arg>Clear Element Text</arg>
+<arg>${productQuantityInput}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${productQuantityInput}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230608 12:36:14.336" endtime="20230608 12:36:14.379"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:14.336" endtime="20230608 12:36:14.379"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${passed}</arg>
+<arg>Input Text</arg>
+<arg>${productQuantityInput}</arg>
+<arg>${quantity}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${productQuantityInput}</arg>
+<arg>${quantity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230608 12:36:14.380" level="INFO">Typing text '2' into text field 'xpath:.//input[@class="qty-input"]'.</msg>
+<status status="PASS" starttime="20230608 12:36:14.380" endtime="20230608 12:36:14.462"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:14.379" endtime="20230608 12:36:14.462"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${passed}</arg>
+<arg>Click Element</arg>
+<arg>${addToCartButton}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${addToCartButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230608 12:36:14.463" level="INFO">Clicking element 'xpath:.//input[@class="button-1 add-to-cart-button"]'.</msg>
+<status status="PASS" starttime="20230608 12:36:14.463" endtime="20230608 12:36:14.521"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:14.462" endtime="20230608 12:36:14.521"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${passed}</arg>
+<arg>Sleep</arg>
+<arg>2</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230608 12:36:16.521" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230608 12:36:14.521" endtime="20230608 12:36:16.521"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:14.521" endtime="20230608 12:36:16.521"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${passed}</arg>
+<arg>SeleniumLibrary.Wait Until Element Is Visible</arg>
+<arg>${addToCartSuccessMessage}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${addToCartSuccessMessage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230608 12:36:16.522" endtime="20230608 12:36:16.544"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:16.521" endtime="20230608 12:36:16.544"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${passed}</arg>
+<arg>Scroll Element Into View</arg>
+<arg>${shoppingCartQuantity}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${shoppingCartQuantity}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230608 12:36:16.545" endtime="20230608 12:36:16.834"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:16.544" endtime="20230608 12:36:16.835"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${quantityAfterText}</var>
+<arg>${shoppingCartQuantity}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230608 12:36:16.851" level="INFO">${quantityAfterText} = (36)</msg>
+<status status="PASS" starttime="20230608 12:36:16.835" endtime="20230608 12:36:16.851"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${quantityAfterText}</var>
+<arg>${quantityAfterText}</arg>
+<arg>)</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20230608 12:36:16.851" level="INFO">${quantityAfterText} = (36</msg>
+<status status="PASS" starttime="20230608 12:36:16.851" endtime="20230608 12:36:16.851"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${quantityAfterText}</var>
+<arg>${quantityAfterText}</arg>
+<arg>(</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20230608 12:36:16.852" level="INFO">${quantityAfterText} = 36</msg>
+<status status="PASS" starttime="20230608 12:36:16.852" endtime="20230608 12:36:16.852"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${quantityAfter}</var>
+<arg>${quantityAfterText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20230608 12:36:16.852" level="INFO">${quantityAfter} = 36</msg>
+<status status="PASS" starttime="20230608 12:36:16.852" endtime="20230608 12:36:16.852"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${passed}</arg>
+<arg>Should Be Equal As Numbers</arg>
+<arg>${quantityAfter}</arg>
+<arg>${expectedQuantityAfter}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${quantityAfter}</arg>
+<arg>${expectedQuantityAfter}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20230608 12:36:16.853" endtime="20230608 12:36:16.853"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:16.852" endtime="20230608 12:36:16.853"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${passed} == False</arg>
+<arg>Should Be Equal As Numbers</arg>
+<arg>${quantityAfter}</arg>
+<arg>${quantityBefore}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230608 12:36:16.853" endtime="20230608 12:36:16.853"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:13.156" endtime="20230608 12:36:16.854"/>
+</kw>
+<kw name="End Tests" library="variables" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230608 12:36:16.854" endtime="20230608 12:36:21.112"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:16.854" endtime="20230608 12:36:21.113"/>
+</kw>
+<doc>Add Blue and green Sneaker from Apparel and Shoes to Shopping Cart</doc>
+<status status="PASS" starttime="20230608 12:36:08.559" endtime="20230608 12:36:21.113"/>
+</test>
+<test id="s1-t2" name="2.0 Add Casual Golf Belt To Shopping Cart" line="22">
+<kw name="Setup Environment" library="variables" type="SETUP">
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${browser}</arg>
+<arg>${browser}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="FAIL" starttime="20230608 12:36:21.118" endtime="20230608 12:36:21.119"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${urlTricentisDemoWebShop}</arg>
+<arg>https://demowebshop.tricentis.com/</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20230608 12:36:21.120" endtime="20230608 12:36:21.120"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${username}</arg>
+<arg>johndoe@dummyweb.com</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20230608 12:36:21.121" endtime="20230608 12:36:21.121"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${password}</arg>
+<arg>Tosca1234!</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20230608 12:36:21.122" endtime="20230608 12:36:21.122"/>
+</kw>
+<status status="FAIL" starttime="20230608 12:36:21.116" endtime="20230608 12:36:21.123"/>
+</kw>
+<kw name="End Tests" library="variables" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230608 12:36:21.125" endtime="20230608 12:36:21.126"/>
+</kw>
+<status status="PASS" starttime="20230608 12:36:21.124" endtime="20230608 12:36:21.126"/>
+</kw>
+<doc>Add Blue Jean from Apparel and Shoes to Shopping Cart</doc>
+<status status="FAIL" starttime="20230608 12:36:21.115" endtime="20230608 12:36:21.127">Setup failed:
+Execution terminated by signal</status>
+</test>
+<test id="s1-t3" name="3.0 Add Fiction To Shopping Cart" line="31">
+<doc>Add Fiction from Books to Shopping Cart</doc>
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230608 12:36:21.129" endtime="20230608 12:36:21.130">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t4" name="4.0 Add Denim Short with Rhinestones To Shopping Cart" line="40">
+<doc>Add Denim Short with Rhinestones from Apparel and Shoes to Shopping Cart</doc>
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230608 12:36:21.131" endtime="20230608 12:36:21.133">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t5" name="5.0 Add 2 Smartphones To Shopping Cart" line="49">
+<doc>Add Fiction from Books to Shopping Cart</doc>
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230608 12:36:21.134" endtime="20230608 12:36:21.134">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20230608 12:36:08.321" endtime="20230608 12:36:21.135"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat pass="1" fail="4" skip="0" id="s1" name="addProductTest">addProductTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
