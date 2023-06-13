@@ -1,0 +1,8 @@
+# Configuración de Report Portal
+reportportal:
+  endpoint: http://localhost:8080
+  project: default_personal
+  token: CNp5OlUw0iFysvHIF4tNnDgBIP4
+  launch: default_TEST_EXAMPLE
+
+# robot --listener robotframework_reportportal.listener --variable RP_UUID:"CNp5OlUw0iFysvHIF4tNnDgBIP4" --variable RP_ENDPOINT:"http://localhost:8080" --variable RP_LAUNCH:"default_TEST_EXAMPLE" --variable RP_PROJECT:"default_personal" .\test\ui\loginTest.robot
